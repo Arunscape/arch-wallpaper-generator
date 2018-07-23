@@ -18,8 +18,6 @@ function generateWallpaper(){
     -gravity center -composite \
     -font Courier -pointsize $((logosize/5)) -fill \#eeeeee -annotate +0+$logosize "$text" -gravity center \
     $count.png
-
-  rm tmplogo.png
   mv $count.png ./wallpapers/$count.png
 }
 
@@ -28,3 +26,4 @@ while read -r l; do
   generateWallpaper "$l" $count
   ((count++))
 done <lines.txt
+rm tmplogo.png
